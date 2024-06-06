@@ -15,4 +15,8 @@
     <ProjectReference Include="..\DesafioDev.Repositorio\DesafioDev.Repositorio.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Pessoa\" />
+  </ItemGroup>
+
 </Project>

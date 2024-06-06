@@ -1,4 +1,6 @@
 using DesafioDev.Repositorio;
+using DesafioDev.Repositorio.Services;
+using DesafioDev.Repositorio.Services.Intefaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,6 +29,8 @@ namespace DesafioDev
         {
             services.AddControllersWithViews();
             services.AddEntityFrameworkSqlServer().AddDbContext<DesafioDevContext>(o => o.UseSqlServer(Configuration.GetConnectionString("DesafioDevBanco")));
+
+            services.AddTransient<ICidadeService, CidadeService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

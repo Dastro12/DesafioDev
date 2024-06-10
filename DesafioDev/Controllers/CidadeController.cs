@@ -1,4 +1,6 @@
 ﻿using DesafioDev.Models;
+using DesafioDev.Models.Mapeamento;
+using DesafioDev.Repositorio.Models;
 using DesafioDev.Repositorio.Services.Intefaces;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -24,5 +26,17 @@ namespace DesafioDev.Controllers
 
             return View(viemodel);
         }
+
+        [HttpPost]
+        public IActionResult Salvar(CidadeViewModel cidade)
+        {
+            if (ModelState.IsValid)
+            {
+                _cidadeService.Salvar(CidadeMapeamento.MapearViewModelParaModel(cidade));
+            }
+
+            return RedirectToAction("Index");
+        }
+
     }
 }

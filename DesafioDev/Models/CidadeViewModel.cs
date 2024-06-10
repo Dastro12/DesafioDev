@@ -11,10 +11,12 @@ namespace DesafioDev.Models
     {
         public int id { get; set; }
 
-        [Required(ErrorMessage ="Campo Obrigatório")]
+        [Required(ErrorMessage = "Campo Obrigatório")]
+        [MaxLength(25, ErrorMessage = "Tamanho Máximo 25 caracters")]
         public string nome { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório")]
+        [MaxLength(2,ErrorMessage = "Tamanho Máximo 2 caracters")]
         public string estado { get; set; }
 
         public List<Cidade> listacidades { get; set; }

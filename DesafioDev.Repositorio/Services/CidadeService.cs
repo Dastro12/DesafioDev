@@ -21,5 +21,21 @@ namespace DesafioDev.Repositorio.Services
         {
             return _db.Cidade.ToList();
         }
+
+        public bool Salvar(Cidade cidade)
+        {
+            if (cidade.id > 0)
+            {
+                _db.Cidade.Update(cidade);
+            }
+            else
+            {
+                _db.Cidade.Add(cidade);
+            }
+
+            int retorno = _db.SaveChanges();
+
+            return retorno > 0;
+        }
     }
 }

@@ -57,7 +57,7 @@ namespace DesafioDev.Repositorio
 
                 entidade.Property(e => e.nome).HasMaxLength(25);
 
-                entidade.Property(e => e.estado).HasMaxLength(20);
+                entidade.Property(e => e.estado).HasMaxLength(2);
             });
         }
     }

@@ -1,0 +1,35 @@
+﻿@model DesafioDev.Models.CidadeViewModel
+
+<div class="modal fade" id="ModalAdicionarCidade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <form method="post" asp-controller="Cidade" asp-action="Salvar">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Cadastro de Cidade</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" asp-for="id" />
+                    <div class="row">
+                        <div class="col-md-8">
+                            <label for="Recebedor" class="form-label text-dark">Cidade :</label>
+                            <input required type="text" class="form-control text-dark" asp-for="nome" id="nome" placeholder="Digite sua Cidade!" />
+                            <span class="text-danger" asp-validation-for="nome"></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="Fornecedor" class="form-label text-dark">Estado :</label>
+                            <input required type="text" class="form-control text-dark" asp-for="estado" id="estado" placeholder="Digite a sigla do seu Estado!">
+                            <span class="text-danger" asp-validation-for="estado"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

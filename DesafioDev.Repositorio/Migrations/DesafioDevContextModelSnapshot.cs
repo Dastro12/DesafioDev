@@ -27,8 +27,8 @@ namespace DesafioDev.Repositorio.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("estado")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasMaxLength(2)
+                        .HasColumnType("nvarchar(2)");
 
                     b.Property<string>("nome")
                         .HasMaxLength(25)

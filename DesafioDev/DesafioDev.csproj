@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="JetBrains.Annotations" Version="2023.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.0">
       <PrivateAssets>all</PrivateAssets>
@@ -14,10 +15,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DesafioDev.Repositorio\DesafioDev.Repositorio.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Views\Pessoa\" />
   </ItemGroup>
 
 </Project>

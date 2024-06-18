@@ -460,3 +460,9 @@ C:\projetos\DesafioDev\DesafioDev\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.CSh
 C:\projetos\DesafioDev\DesafioDev\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\projetos\DesafioDev\DesafioDev\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\projetos\DesafioDev\DesafioDev\obj\Debug\net5.0\DesafioDev.MvcApplicationPartsAssemblyInfo.cs
+C:\projetos\DesafioDev\DesafioDev\bin\Debug\net5.0\JetBrains.Annotations.dll
+C:\projetos\DesafioDev\DesafioDev\obj\Debug\net5.0\Razor\Views\Pessoa\Index.cshtml.g.cs
+C:\projetos\DesafioDev\DesafioDev\obj\Debug\net5.0\Razor\Views\Pessoa\Form.cshtml.g.cs
+C:\projetos\DesafioDev\DesafioDev\obj\Debug\net5.0\Razor\Views\Cidade\_TabelaCidade.cshtml.g.cs
+C:\projetos\DesafioDev\DesafioDev\obj\Debug\net5.0\Razor\Views\Pessoa\_TabelaPessoa.cshtml.g.cs
+C:\projetos\DesafioDev\DesafioDev\obj\Debug\net5.0\Razor\Views\Shared\_Estados.cshtml.g.cs

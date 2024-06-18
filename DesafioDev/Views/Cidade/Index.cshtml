@@ -1,5 +1,7 @@
 ﻿@model DesafioDev.Models.CidadeViewModel
-
+@{
+    Layout = "_Layout";
+}
 <h1 class="text-center">Cadastro de Cidade</h1>
 
 <div class="row">
@@ -8,27 +10,11 @@
     </div>
 </div>
 
-<table class="table table-striped table-hover">
-    <thead>
-        <tr>
-            <th scope="col">Cidade</th>
-            <th scope="col">Estado</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var cidade in Model.listacidades)
-        {
-            <tr>
-                <td>@cidade.nome</td>
-                <td>@cidade.estado</td>
-                <td>
-                    <button class="btn btn-success btn-sm" title="Editar"><i class="bi bi-pencil-square"></i></button>
-                </td>
-            </tr>
-        }
+<div id="divTabelaCidade">
+    <partial name="_TabelaCidade"  model="Model"/>
+</div>
 
-    </tbody>
-</table>
+<div id="divform">
 
-<partial name="Form" model="@Model"/>
+</div>
+<script src="~/js/Cidade/Index.js"></script>

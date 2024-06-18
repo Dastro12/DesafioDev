@@ -1,9 +1,11 @@
 ﻿@model DesafioDev.Models.CidadeViewModel
-
+@{ 
+    Layout = null;
+}
 <div class="modal fade" id="ModalAdicionarCidade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
-            <form method="post" asp-controller="Cidade" asp-action="Salvar">
+            <form method="post" asp-controller="Cidade" asp-action="Salvar" id="FormCidade">
                 <div class="modal-header">
                     <h3 class="modal-title" id="exampleModalLabel">Cadastro de Cidade</h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -26,10 +28,11 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
                     <button type="submit" class="btn btn-success">Salvar</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+<script src="~/js/Cidade/Form.js"></script>

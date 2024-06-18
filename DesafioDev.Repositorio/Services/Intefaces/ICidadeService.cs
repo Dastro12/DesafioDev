@@ -8,6 +8,10 @@ namespace DesafioDev.Repositorio.Services.Intefaces
         List<Cidade> BuscarCidades();
 
         bool Salvar(Cidade cidade);
+
+        Cidade BuscarCidade(int id);
+
+        bool Delete(int id);
     }
 
 }

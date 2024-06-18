@@ -1,0 +1,49 @@
+﻿@model DesafioDev.Models.Service.Interface.PessoaViewModel
+@{
+    Layout = "_Layout";
+}
+
+<h1 class="text-center">Cadastro de Pessoa</h1>
+
+<div class="row">
+    <div class="col-md-2">
+        <button class="btn btn-primary btn-sm btn-AdicionarPessoa">Adicionar</button>
+    </div>
+</div>
+
+<form id="FormFiltroPessoa">
+    <div class="row mt-4 mb-4">
+        <div class="col-md-2">
+            <label>Tipo</label>
+            <select class="form-control" asp-for="tipo_pessoa">
+                <option value="">Todos</option>
+                <option value="FI">Física</option>
+                <option value="Ju">Juridica</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label>Cidade</label>
+            <select class="form-control" asp-for="cidade_id" asp-items="Model.selectcidades"></select>
+        </div>
+        <div class="col-md-3">
+            <label>UF</label>
+            <select class="form-control" asp-for="estado">
+                <partial name="~/Views/Shared/_Estados.cshtml" />
+            </select>
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-success">Pesquisar</button>
+        </div>
+    </div>
+
+</form>
+
+<div id="divTabelaPessoa">
+    <partial name="_TabelaPessoa" model="Model" />
+</div>
+
+
+<div id="divform">
+
+</div>
+<script src="~/js/Pessoa/Index.js"></script>

@@ -1,3 +1,5 @@
+using DesafioDev.Models.Service;
+using DesafioDev.Models.Service.Interface;
 using DesafioDev.Repositorio;
 using DesafioDev.Repositorio.Services;
 using DesafioDev.Repositorio.Services.Intefaces;
@@ -30,7 +32,9 @@ namespace DesafioDev
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddEntityFrameworkSqlServer().AddDbContext<DesafioDevContext>(o => o.UseSqlServer(Configuration.GetConnectionString("DesafioDevBanco")));
 
+            services.AddTransient<IPessoaService, PessoaService>();
             services.AddTransient<ICidadeService, CidadeService>();
+            services.AddTransient<IViewRenderService, ViewRenderService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

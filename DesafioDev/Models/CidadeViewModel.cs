@@ -17,8 +17,10 @@ namespace DesafioDev.Models
 
         [Required(ErrorMessage = "Campo Obrigatório")]
         [MaxLength(2,ErrorMessage = "Tamanho Máximo 2 caracters")]
-        public string estado { get; set; }
+        public string estado { get; set; } 
 
         public List<Cidade> listacidades { get; set; }
+
+        
     }
 }

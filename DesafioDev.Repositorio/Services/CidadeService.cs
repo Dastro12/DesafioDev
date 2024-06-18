@@ -21,7 +21,6 @@ namespace DesafioDev.Repositorio.Services
         {
             return _db.Cidade.ToList();
         }
-
         public bool Salvar(Cidade cidade)
         {
             if (cidade.id > 0)
@@ -36,6 +35,29 @@ namespace DesafioDev.Repositorio.Services
             int retorno = _db.SaveChanges();
 
             return retorno > 0;
+        }
+        public Cidade BuscarCidade(int id)
+        {
+            var cidade = _db.Cidade.Find(id);
+
+            return cidade;
+        }
+        public bool Delete(int id)
+        {
+            var cidade = _db.Cidade.Find(id);
+
+            if (cidade != null)
+            {
+                _db.Cidade.Remove(cidade);
+
+                int retorno = _db.SaveChanges();
+
+                return retorno > 0;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

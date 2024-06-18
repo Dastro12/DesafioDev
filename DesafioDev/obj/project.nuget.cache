@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "eiRh0ZyrXEi8w5TxwstEBruCjqO8PpPT4RRAJP6nLAW5i6DwkPt3/uUwtM758u/cuDYSl5CnIEYElPGYY+VEgg==",
+  "dgSpecHash": "LYPACd+SHyz9emieG6Re7U6qS8sce243/7nfafWeL/qxgUXD9bj7TguhTAWOeefRRclj022RtjR3ukDI/HNZ+w==",
   "success": true,
   "projectFilePath": "C:\\projetos\\DesafioDev\\DesafioDev\\DesafioDev.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\55679\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\55679\\.nuget\\packages\\jetbrains.annotations\\2023.3.0\\jetbrains.annotations.2023.3.0.nupkg.sha512",
     "C:\\Users\\55679\\.nuget\\packages\\microsoft.aspnetcore.hosting\\2.2.7\\microsoft.aspnetcore.hosting.2.2.7.nupkg.sha512",
     "C:\\Users\\55679\\.nuget\\packages\\microsoft.aspnetcore.hosting.abstractions\\2.2.0\\microsoft.aspnetcore.hosting.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\55679\\.nuget\\packages\\microsoft.aspnetcore.hosting.server.abstractions\\2.2.0\\microsoft.aspnetcore.hosting.server.abstractions.2.2.0.nupkg.sha512",

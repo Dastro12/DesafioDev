@@ -23,6 +23,7 @@ function AbrirFormPessoa(id = 0) {
 }
 
 function DeletarPessoa(id) {
+    debugger
     swal({
         title: "Deseja realmente excluír?",
         text: "Pessoa será excluída de forma permanente!",
@@ -31,7 +32,25 @@ function DeletarPessoa(id) {
         dangerMode: true,
     }).then((confirma) => {
         if (confirma) {
-            AbrirExcluir(id);
+            AbrirExcluirPessoa(id);
+        }
+    });
+}
+
+function AbrirExcluirPessoa(id) {
+    $.ajax({
+        type: 'POST',
+        url: '/Pessoa/Delete',
+        data: { id: id }
+    }).then(function (response) {
+        if (response.status) {
+
+            $("#divTabelaCidade").html(response.view);
+
+            swal("Sucesso", response.mensagem, "success");
+        }
+        else {
+            swal("Atenção", response.mensagem, "warning");
         }
     });
 }

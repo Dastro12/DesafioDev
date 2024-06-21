@@ -11,7 +11,7 @@
     </div>
 </div>
 
-<form id="FormFiltroPessoa">
+<form id="FormFiltroPessoa" asp-controller="Pessoa" asp-action="Filtrar" method="post">
     <div class="row mt-4 mb-4">
         <div class="col-md-2">
             <label>Tipo</label>
@@ -28,6 +28,7 @@
         <div class="col-md-3">
             <label>UF</label>
             <select class="form-control" asp-for="estado">
+                <option value="">Todos</option>
                 <partial name="~/Views/Shared/_Estados.cshtml" />
             </select>
         </div>

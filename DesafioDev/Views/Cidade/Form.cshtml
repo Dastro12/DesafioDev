@@ -22,7 +22,9 @@
                         </div>
                         <div class="col-md-4">
                             <label for="Fornecedor" class="form-label text-dark">Estado :</label>
-                            <input required type="text" class="form-control text-dark" asp-for="estado" id="estado" placeholder="Digite a sigla do seu Estado!">
+                            <select class="form-control" asp-for="estado">
+                                <partial name="~/Views/Shared/_Estados.cshtml" />
+                            </select>
                             <span class="text-danger" asp-validation-for="estado"></span>
                         </div>
                     </div>

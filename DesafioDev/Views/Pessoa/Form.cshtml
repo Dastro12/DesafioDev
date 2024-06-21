@@ -4,9 +4,9 @@
 }
 
 <div class="modal fade" id="ModalAdicionarPessoa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
-            <form method="post"asp-controller="Pessoa" asp-action="Salvar" id="FormPessoa" >
+            <form method="post" asp-controller="Pessoa" asp-action="Salvar" id="FormPessoa">
                 <div class="modal-header">
                     <h3 class="modal-title" id="exampleModalLabel">Cadastro de Pessoas</h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -16,28 +16,89 @@
                 <div class="modal-body">
                     <input type="hidden" asp-for="id" />
                     <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-4">
                             <label for="Recebedor" class="form-label text-dark">Pessoa :</label>
                             <input required type="text" class="form-control text-dark" asp-for="nome" id="nome" placeholder="Digite seu Nome!" />
                             <span class="text-danger" asp-validation-for="nome"></span>
                         </div>
-                        <div class="col-md-4">
-                            <label for="Fornecedor" class="form-label text-dark">Tipo de Pessoa :</label>
-                            <input required type="text" class="form-control text-dark" asp-for="tipo_pessoa" id="tipo_pessoa" placeholder="Pessoa Fisica ou Juridica!">
-                            <span class="text-danger" asp-validation-for="tipo_pessoa"></span>
+                        <div class="col-md-2">
+                            <label>Tipo pessoa</label>
+                            <select class="form-control" asp-for="tipo_pessoa">
+                                <option value="">Todos</option>
+                                <option value="FI">Física</option>
+                                <option value="Ju">Juridica</option>
+                            </select>
                         </div>
                         <div class="col-md-4">
-                            <label for="Fornecedor" class="form-label text-dark">Tipo de Pessoa :</label>
+                            <label for="Fornecedor" class="form-label text-dark">Cpf/Cnpj :</label>
                             <input required type="text" class="form-control text-dark" asp-for="cpf_cnpj" id="cpf_cnpj" placeholder="Digite seu CPF ou CNPJ!">
                             <span class="text-danger" asp-validation-for="cpf_cnpj"></span>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="Fornecedor" class="form-label text-dark">Cep :</label>
+                            <input required type="text" class="form-control text-dark" asp-for="cep" id="cep" placeholder="Digite seu Cep!">
+                            <span class="text-danger" asp-validation-for="cep"></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="Fornecedor" class="form-label text-dark">Endereço :</label>
+                            <input required type="text" class="form-control text-dark" asp-for="endereco" id="endereco" placeholder="Digite seu Endereço!">
+                            <span class="text-danger" asp-validation-for="endereco"></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="Fornecedor" class="form-label text-dark">Numero :</label>
+                            <input required type="number" class="form-control text-dark" asp-for="numero" id="numero" placeholder="Digite o numero!">
+                            <span class="text-danger" asp-validation-for="cpf_cnpj"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="Fornecedor" class="form-label text-dark">Complemento :</label>
+                            <input required type="text" class="form-control text-dark" asp-for="complemento" id="complemento" placeholder="Digite o complemento!">
+                            <span class="text-danger" asp-validation-for="complemento"></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="Fornecedor" class="form-label text-dark">Bairro :</label>
+                            <input required type="text" class="form-control text-dark" asp-for="bairro" id="endereco" placeholder="Digite seu bairro!">
+                            <span class="text-danger" asp-validation-for="bairro"></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="Fornecedor" class="form-label text-dark">Nascimento/Fundação :</label>
+                            <input required type="date" class="form-control text-dark" asp-for="data_nascimento_fundacao" id="datanascimentofundacao" placeholder="Digite a sua data de nascimento ou da fundação!">
+                            <span class="text-danger" asp-validation-for="data_nascimento_fundacao"></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="Fornecedor" class="form-label text-dark">E-mail :</label>
+                            <input required type="text" class="form-control text-dark" asp-for="email" id="datacadastro" placeholder="Digite seu email!">
+                            <span class="text-danger" asp-validation-for="email"></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="Fornecedor" class="form-label text-dark">Celular :</label>
+                            <input required type="number" class="form-control text-dark" asp-for="celular" id="celular" placeholder="Digite o seu contato!">
+                            <span class="text-danger" asp-validation-for="celular"></span>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Cidade</label>
+                            <select class="form-control" asp-for="cidade_id" asp-items="Model.selectcidades"></select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Situação</label>
+                            <select class="form-control" name="sit_cadastral">-
+                                <option value="A">Ativo</option>
+                                <option value="I">Inativo</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal>Voltar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
                     <button type="submit" class="btn btn-success">Salvar</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+<script src="~/js/Pessoa/Form.js"></script>

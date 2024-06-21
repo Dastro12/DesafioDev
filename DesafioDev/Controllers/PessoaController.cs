@@ -32,7 +32,7 @@ namespace DesafioDev.Controllers
         public IActionResult Index()
         {
             PessoaViewModel viemodel = new PessoaViewModel();
-            viemodel.listapessoas = _pessoaService.BuscarPessoas();
+            viemodel.listapessoas = _pessoaService.FiltrarPessoas(null, 0, null);
             viemodel.selectcidades = CidadeMapeamento.MapearCidadesParaSelect(_cidadeService.BuscarCidades());
 
             return View(viemodel);
@@ -46,9 +46,11 @@ namespace DesafioDev.Controllers
             {
                 var pessoa = _pessoaService.BuscarPessoaId(id);
 
-                pessoaViewModel = PessoaMapeamento.MapearViewModelParaModel(pessoa);
+                pessoaViewModel = PessoaMapeamento.MapearModelParaViewModel(pessoa);
+               
 
             }
+            pessoaViewModel.selectcidades = CidadeMapeamento.MapearCidadesParaSelect(_cidadeService.BuscarCidades() ,false);
 
             string Form = _viewRenderService.RenderToString(this, "Form", pessoaViewModel);
 
@@ -93,6 +95,19 @@ namespace DesafioDev.Controllers
                 return Json(new { status = false, mensagem = "Não foi possível excluír pessoa!" });
             }
         }
+
+        [HttpPost]
+        public IActionResult Filtrar(PessoaViewModel filtro)
+        {
+            var pessoas = _pessoaService.FiltrarPessoas(filtro.tipo_pessoa, filtro.cidade_id, filtro.estado);
+            var model = new PessoaViewModel
+            {
+                listapessoas = pessoas,
+
+            };
+            return PartialView("_TabelaPessoa", model);
+        }
+
 
     }
 }

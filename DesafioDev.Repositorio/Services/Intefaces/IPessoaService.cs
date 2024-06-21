@@ -19,5 +19,9 @@ namespace DesafioDev.Repositorio.Services.Intefaces
 
 
         bool Delete(int id);
+
+        List<Pessoa> FiltrarPessoas(string tipoPessoa, int cidadeId, string estado);
+
+
     }
 }

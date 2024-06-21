@@ -3,7 +3,7 @@
     Layout = null;
 }
 
-<table  class="table table-striped table-hover">
+<table   class="table table-striped table-hover">
     <thead>
         <tr>
             <th scope="col">Nome</th>
@@ -22,8 +22,8 @@
                     <td>@pessoa.tipo_pessoa</td>
                     <td>@pessoa.cpf_cnpj</td>
                     <td>
-                        <button class="btn btn-warning btn-sm" title="Editar" onclick="EditarCidade(@pessoa.id)"><i class="bi bi-pencil-square"></i></button>
-                        <button class="btn btn-danger btn-sm" title="Excluir" onclick="DeletarCidade(@pessoa.id)"><i class="bi bi-trash3-fill"></i></button>
+                        <button class="btn btn-warning btn-sm" title="Editar" onclick="EditarPessoa(@pessoa.id)"><i class="bi bi-pencil-square"></i></button>
+                        <button class="btn btn-danger btn-sm" title="Excluir" onclick="(@pessoa.id)"><i class="bi bi-trash3-fill"></i></button>
                     </td>
                 </tr>
             }

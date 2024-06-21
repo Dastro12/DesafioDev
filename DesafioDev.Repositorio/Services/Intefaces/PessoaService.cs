@@ -59,6 +59,32 @@ namespace DesafioDev.Repositorio.Services.Intefaces
                 return false;
             }
         }
+        public List<Pessoa> FiltrarPessoas(string tipoPessoa, int cidadeId, string estado)
+        {
+            var query = _db.Pessoa.AsQueryable();
+
+            if (!string.IsNullOrEmpty(tipoPessoa))
+            {
+                query = query.Where(p => p.tipo_pessoa == tipoPessoa);
+            }
+
+            if (cidadeId > 0)
+            {
+                query = query.Where(p => p.cidade_id == cidadeId);
+            }
+
+            if (!string.IsNullOrEmpty(estado))
+            {
+                //query = (from p in _db.Pessoa
+                //             join c in _db.Cidade on p.cidade_id equals c.id
+                //             where string.IsNullOrEmpty(estado) ? p != null : c.estado == estado
+                //             select p).AsQueryable();
+
+                query = query.Where(p => _db.Cidade.Any(c => c.id == p.cidade_id && c.estado == estado));
+            }
+
+            return query.ToList();
+        }
 
     }
 }

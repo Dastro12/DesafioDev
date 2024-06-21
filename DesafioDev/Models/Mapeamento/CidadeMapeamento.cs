@@ -28,13 +28,18 @@ namespace DesafioDev.Models.Mapeamento
             return cidadeViewModel;
         }
 
-        public static List<SelectListItem> MapearCidadesParaSelect(List<Cidade> cidades)
+        public static List<SelectListItem> MapearCidadesParaSelect(List<Cidade> cidades ,bool mostrartodos = true) 
         {
             List<SelectListItem> itens = new List<SelectListItem>();
-            SelectListItem todos = new SelectListItem();
-            todos.Text = "Todos";
-            todos.Value = string.Empty;
-            itens.Add(todos);
+
+            if (mostrartodos)
+            {
+                SelectListItem todos = new SelectListItem();
+                todos.Text = "Todos";
+                todos.Value = string.Empty;
+                itens.Add(todos);
+            }
+            
 
             foreach (var cidade in cidades)
             {

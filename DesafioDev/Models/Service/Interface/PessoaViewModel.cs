@@ -17,7 +17,7 @@ namespace DesafioDev.Models.Service.Interface
         [MaxLength(70, ErrorMessage = "Tamanho Máximo 25 caracters")]
         public string nome { get; set; }
 
-        [Required(ErrorMessage = "Campo Obrigatório")]
+       
         [MaxLength(2, ErrorMessage = "Tamanho Máximo 25 caracters")]
         public string tipo_pessoa { get; set; }
 
@@ -44,9 +44,10 @@ namespace DesafioDev.Models.Service.Interface
         [MaxLength(50, ErrorMessage = "Tamanho Máximo 25 caracters")]
         public string bairro { get; set; }
 
+        [Required(ErrorMessage = "Campo Obrigatório")]
         public DateTime data_nascimento_fundacao { get; set; }
 
-        public DateTime data_cadastro { get; set; }
+        public DateTime data_cadastro { get; set; } 
 
         [Required(ErrorMessage = "Campo Obrigatório")]
         [MaxLength(50, ErrorMessage = "Tamanho Máximo 25 caracters")]
@@ -56,8 +57,6 @@ namespace DesafioDev.Models.Service.Interface
         [MaxLength(20, ErrorMessage = "Tamanho Máximo 25 caracters")]
         public string celular { get; set; }
 
-        [Required(ErrorMessage = "Campo Obrigatório")]
-        [MaxLength(2, ErrorMessage = "Tamanho Máximo 25 caracters")]
         public string sit_cadastral { get; set; }
 
         public int cidade_id { get; set; }
